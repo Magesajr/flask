@@ -1,0 +1,28 @@
+{% extends 'layout.html'%}
+{%block content %}
+  <div class='content-section'>
+    <form method="POST" actions="">
+      <fieldset class='form-group'>
+        <div class='form-group'>
+          {{form.entry.label}}
+            <div>
+              {{form.entry}}
+            </div></div>
+        <div class='form-group'>
+          {{form.recipient.label}}
+            <div>
+              {{form.recipient}}
+            </div></div>
+        <div class='form-group'>
+          {{form.Pin.label}}
+            <div>
+              {{form.Pin}}
+            </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <div>
+    {{form.pay(class='btn btn-success')}}
+  </div>
+{%endblock content %}

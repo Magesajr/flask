@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %} 
+    <div class="content-section">
+      <form method="POST" action="">
+        {{form.hidden_tag()}}
+        <fieldset class="form-group">
+          <legend class="border-bottom mb-4">PayMents Methods</legend>
+          <div class="form-group" href='https://play.google.com/store/apps/details?id=tz.tigo.mfsapp&hl=en'>
+          {{form.Tigo(class="btn btn-success")}}
+        </div>
+              <div class="form-group" href='https://play.google.com/store/apps/details?id=tz.tigo.mfsapp&hl=en'>
+              {{form.Voda(class="btn btn-danger")}}
+            </div>
+              <div class="form-group" href="{{url_for('pays.azampay')}}">
+              {{form.Azam(type='submit',class="btn btn-info")}}
+            </div>
+              <div class="form-group" href='https://play.google.com/store/apps/details?id=tz.tigo.mfsapp&hl=en'>
+              {{form.Airtel(class="btn btn-outline-danger")}}
+            </div>
+              <div class="form-group" href='https://play.google.com/store/apps/details?id=tz.tigo.mfsapp&hl=en'>
+              {{form.TTCL(class="btn btn-warning")}}
+            </div>
+              <div class="form-group">
+            {{ form.picture.label()}}
+            {{ form.picture(class='form-control-file')}}
+            {% if form.picture.errors%}
+              {%for error in form.picture.errors%}
+                  <span class="text-danger">{{error}}</span></br>
+                {%endfor%}
+            {%endif%}
+        </fieldset>
+          <div class="form-group">
+          {{form.upload(class="btn btn-info")}}
+        </div>
+      </form>
+    </div>
+    <div class="border-bottom pt-3">
+      <small class="text-muted">
+        Arleady Have Paid?<a class="ml-2" href="{{url_for('main.HOME')}}">Home Page</a>
+      </small>
+    </div>
+        <!--div class="content-section">
+      {%for pay in payments%}
+      <article  clqss="media-content-sectio">
+        <div class="media-body">
+          <div class="article-metadata">
+            <div class="content-section">
+               <a class="mr-2" href="#">{{pay.Author}}</a>
+            <small class="text-muted">{{pay.date}}</small>
+            <div>
+              <h2><a class="article-title" href="#">{{pay.title}}</a></h2>
+              <p class="article-content">{{pay.content}}</p>
+            </div>
+            </div>
+        </div>
+      </article>
+  {%endfor%}-->  
+{% endblock content %}
