@@ -71,8 +71,7 @@ coverage.xml
 local_settings.py
 db.sqlite3
 
-# Flask stuff:
-instance/
+# Flask stuffs
 .webassets-cache
 
 # Scrapy stuff:

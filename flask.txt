@@ -1,6 +1,6 @@
 export SECRET_KEY='c5c321bb470b4b11b98346a4f7223005'
 export SQLALCHEMY_DATABASE_URI='sqlite:///site.db'
-export PAYMENT_KEY='50d634f7ff85cd7ad324d4998dda3151'
+export PAYMENT_KEY='a50d634f7ff85cd7ad324d4998dda3151'
 
 export MAIL_USERNAME='sam263708@gmail.com'
 export MAIL_PASSWORD='hpyxoozfawqcyjnt'
