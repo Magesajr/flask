@@ -25,3 +25,5 @@ gunicorn==21.2.0
 Werkzeug==2.3.3
 pillow==10.2.0
 psycopg2-binary==2.9.9
+file=form.file.data
+pandas==2.2.1
