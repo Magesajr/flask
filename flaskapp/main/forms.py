@@ -9,5 +9,5 @@ import os
 folder='flaskapp/main'
 choices=[(f,f) for f in os.listdir(folder)]
 class DownloadForm(FlaskForm):
-  file=SelectField('check your File to download',choices=choices,validators-=[DataRequired()])
+  file=SelectField('check your File to download',validators=[DataRequired()],choices=choices)
   submit=SubmitField('download')
