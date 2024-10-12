@@ -22,7 +22,7 @@ def download():
   if form.validate_on_submit():
     try:
       send_from_directory(folder,file,as_attachment=True)
-    except FileNotFounderror:
+    except FileNotFoundError:
       flash('file not exixts','danger')
       return redirect(url_for('.HOME'))
   return render_template('download.html',title='download',form=form)
