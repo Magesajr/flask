@@ -34,9 +34,7 @@ def files(filename):
   folder='flask/flaskapp/main/files'
   if not os.path.exists(folder):
     os.makedirs(folder)
-    new=os.path.join(folder,filename)
+    os.path.join(folder,filename)
     flash('new file  created','info')
-  elif os.path.exists(new):
-    flash('file exists already','danger')
     return redirect(url_for('HOME'))
   return redirect(url_for('HOME'))
