@@ -20,9 +20,10 @@ def download():
   folder='flask/flaskapp/main'
   form=DownloadForm()
   file=form.file.data
+  file=os.path.join(folder,file)
   if form.validate_on_submit():
     try:
-      return send_from_directory(folder,file,as_attachment=True)
+      return send_from_directory('main',file,as_attachment=True)
     except FileNotFoundError:
       flash('file not exixts','danger')
       return redirect(url_for('HOME'))
