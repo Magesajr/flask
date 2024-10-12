@@ -14,7 +14,7 @@ def HOME():
 def about():
   return render_template('about.html',title='About')
   
-@main.route('/download')
+@main.route('/download',methods=['GET','POST'])
 def download():
   folder='flaskapp/main'
   form=DownloadForm()
