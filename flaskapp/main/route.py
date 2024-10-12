@@ -33,7 +33,7 @@ def download():
 def files(filename):
   folder='flask/flaskapp/main/files'
   if not os.path.exists(folder):
-    os.mkdirs(folder)
+    os.makedirs(folder)
     new=os.path.join(folder,filename)
     flash('new file  created','info')
   elif os.path.exists(new):
