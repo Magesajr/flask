@@ -21,7 +21,6 @@ def download():
   form=DownloadForm()
   if form.validate_on_submit():
     file=form.file.data
-    file=os.path.join(folder,file)
     try:
       return send_from_directory('main',file,as_attachment=True)
     except FileNotFoundError:
