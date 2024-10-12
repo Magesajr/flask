@@ -19,9 +19,9 @@ def about():
 def download():
   folder='flask/flaskapp/main'
   form=DownloadForm()
-  file=form.file.data
-  file=os.path.join(folder,file)
   if form.validate_on_submit():
+    file=form.file.data
+    file=os.path.join(folder,file)
     try:
       return send_from_directory('main',file,as_attachment=True)
     except FileNotFoundError:
