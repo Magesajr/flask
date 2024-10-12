@@ -2,6 +2,7 @@ from flask import render_template,request,Blueprint,send_from_directory,redirect
 from flaskapp.models import Post
 from .forms import DownloadForm
 import os
+import pandas as pd
 
 main=Blueprint('main',__name__)
 
@@ -28,3 +29,14 @@ def download():
       return redirect(url_for('HOME'))
   return render_template('download.html',title='download',form=form)
   
+@main.route('/newfiles/<filename>',methods=['GET','POST'])
+def files(filename):
+  folder='flask/flaskapp/main/files'
+  if not os.path.exists(folder):
+    os.mkdirs(folder)
+    new=os.path.join(folder,filename)
+    flash('new file  created','info')
+  elif os.path.exists(new):
+    flash('file exists already','danger')
+    return redirect(url_for('HOME'))
+  return redirect(url_for('HOME))
