@@ -1,6 +1,7 @@
 from flask import render_template,request,Blueprint,send_from_directory,redirect
 from flaskapp.models import Post
 from .forms import DownloadForm
+import os
 
 main=Blueprint('main',__name__)
 
@@ -21,7 +22,8 @@ def download():
   file=form.file.data
   if form.validate_on_submit():
     try:
-      return send_from_directory(folder,file,as_attachment=True)
+      if os.path.isfile(os.path.join(folder,file)):
+        return send_from_directory(folder,file,as_attachment=True)
     except FileNotFoundError:
       flash('file not exixts','danger')
       return redirect(url_for('HOME'))
