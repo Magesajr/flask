@@ -1,1 +1,7 @@
-
+{%extends 'layout.html'%}
+{% from 'bootstrap5/form.html' import render_form as R%}
+{% block content%}
+  <div class="content-section">
+    {{R(form)}}
+  </div>
+{% endblock content%}
