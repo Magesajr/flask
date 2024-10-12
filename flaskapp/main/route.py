@@ -25,5 +25,5 @@ def download():
     except FileNotFounderror:
       flash('file not exixts','danger')
       return redirect(url_for('.HOME'))
-  return render_template('download.html',title='download')
+  return render_template('download.html',title='download',form=form)
   
