@@ -1,5 +1,6 @@
 from flask import render_template,request,Blueprint,send_from_directory,redirect
 from flaskapp.models import Post
+from .forms import DownloadForm
 
 main=Blueprint('main',__name__)
 
