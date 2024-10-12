@@ -17,7 +17,7 @@ def about():
   
 @main.route('/download',methods=['GET','POST'])
 def download():
-  folder='flaskapp/main'
+  folder='flask/flaskapp/main'
   form=DownloadForm()
   file=form.file.data
   if form.validate_on_submit():
