@@ -36,5 +36,5 @@ def files(filename):
     os.makedirs(folder)
     os.path.join(folder,filename)
     flash('new file  created','info')
-    return redirect(url_for('HOME'))
+    return redirect(url_for('main.HOME'))
   return redirect(url_for('HOME'))
