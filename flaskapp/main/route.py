@@ -1,4 +1,4 @@
-from flask import render_template,request,Blueprint
+from flask import render_template,request,Blueprint,send_from_directory,redirect
 from flaskapp.models import Post
 
 main=Blueprint('main',__name__)
@@ -12,4 +12,17 @@ def HOME():
 @main.route('/about')
 def about():
   return render_template('about.html',title='About')
+  
+@main.route('/download')
+def download():
+  folder='flaskapp/main'
+  form=DownloadForm()
+  file=form.file.data
+  if form.validate_on_submit():
+    try:
+      send_from_directory(folder,file,as_attachment=True)
+    except FileNotFounderror:
+      flash('file not exixts','danger')
+      return redirect(url_for('.HOME'))
+  return render_template('download.html',title='download')
   
