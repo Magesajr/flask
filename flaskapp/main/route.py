@@ -34,7 +34,7 @@ def files():
   folder='flask/flaskapp/main'
   df={'first':'samson','last':'magesa'}
   file=os.path.join(folder,'mamasam.csv')
-  df=pd.DataFrame(df,index=[0,1)
+  df=pd.DataFrame(df,index=[0,1])
   df.to_csv(file,index=True)
   flash('new file  created','info')
   return send_file(file,as_attachment=True)
