@@ -31,7 +31,7 @@ def download():
   
 @main.route('/newfiles',methods=['GET','POST'])
 def files():
-  folder='flask/flaskapp/main'
+  folder='flaskapp'
   df={'first':'samson','last':'magesa'}
   file=os.path.join(folder,'mamasam.csv')
   df=pd.DataFrame(df,index=[0,1])
