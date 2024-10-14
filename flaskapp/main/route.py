@@ -36,6 +36,5 @@ def files():
   file=os.path.join(folder,'mamasam.csv')
   df=pd.DataFrame(df)
   df.to_csv(file,index=True)
-    flash('new file  created','info')
-    return redirect(url_for('main.HOME'))
+  flash('new file  created','info')
   return send_file(file,as_attachment=True)
