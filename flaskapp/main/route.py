@@ -30,7 +30,7 @@ def download():
   return render_template('download.html',title='download',form=form)
   
 @main.route('/newfiles',methods=['GET','POST'])
-def files()
+def files():
   df={'first':'samson','last':'magesa'}
   file=os.path.join(os.getcwd(),'mamasam.csv')
   df=pd.DataFrame(df,index=[0,1])
