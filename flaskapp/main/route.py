@@ -30,10 +30,9 @@ def download():
   return render_template('download.html',title='download',form=form)
   
 @main.route('/newfiles',methods=['GET','POST'])
-def files():
-  folder='flaskapp'
+def files()
   df={'first':'samson','last':'magesa'}
-  file=os.path.join(folder,'mamasam.csv')
+  file=os.path.join(os.getcwd(),'mamasam.csv')
   df=pd.DataFrame(df,index=[0,1])
   df.to_csv(file,index=True)
   flash('new file  created','info')
