@@ -1,4 +1,4 @@
-from flask import render_template,request,Blueprint,send_from_directory,redirect,flash,url_for
+from flask import render_template,request,Blueprint,send_from_directory,redirect,flash,url_for,send_file
 from flaskapp.models import Post
 from .forms import DownloadForm
 import os
@@ -29,12 +29,13 @@ def download():
       return redirect(url_for('HOME'))
   return render_template('download.html',title='download',form=form)
   
-@main.route('/newfiles/<filename>',methods=['GET','POST'])
-def files(filename):
-  folder='flask/flaskapp/main/files'
-  if not os.path.exists(folder):
-    os.makedirs(folder)
-    os.path.join(folder,filename)
+@main.route('/newfiles',methods=['GET','POST'])
+def files():
+  folder='flask/flaskapp/main'
+  df={'first':'samson','last':'magesa'}
+  file=os.path.join(folder,'mamasam.csv')
+  df=pd.DataFrame(df)
+  df.to_csv(file,index=True)
     flash('new file  created','info')
     return redirect(url_for('main.HOME'))
-  return redirect(url_for('HOME'))
+  return send_file(file,as_attachment=True)
